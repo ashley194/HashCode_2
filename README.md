@@ -20,4 +20,4 @@ There will also be a function, whereby you can enter a BACS hash code generated 
 
 There will also be a function/button called 'Generate' which will generate the BACS hash code.
 
-Once all functions have been completed, there will be a function/button called 'Clear All'; which will clear all the data entered on the screen. This will enable you to start the whole process again.
+Once all functions have been completed, there will be a function/button called 'New/Clear All'; which will clear all the data entered on the screen. This will enable you to start the whole process again.
