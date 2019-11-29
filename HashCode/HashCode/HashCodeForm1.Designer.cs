@@ -105,6 +105,9 @@
             this.txtRandomNumber.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtRandomNumber, "Enter the Hash Code");
             this.txtRandomNumber.TextChanged += new System.EventHandler(this.txtRandomNumber_TextChanged);
+            this.txtRandomNumber.Enter += new System.EventHandler(this.txtRandomNumber_Enter);
+            this.txtRandomNumber.Leave += new System.EventHandler(this.txtRandomNumber_Leave);
+            this.txtRandomNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtRandomNumber_Validating);
             // 
             // txtPaymentValue
             // 
@@ -117,7 +120,10 @@
             this.txtPaymentValue.TabIndex = 4;
             this.toolTip1.SetToolTip(this.txtPaymentValue, "Enter the Employees NET pay");
             this.txtPaymentValue.TextChanged += new System.EventHandler(this.TxtPaymentValue_TextChanged);
+            this.txtPaymentValue.Enter += new System.EventHandler(this.txtPaymentValue_Enter);
             this.txtPaymentValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaymentValue_KeyPress);
+            this.txtPaymentValue.Leave += new System.EventHandler(this.txtPaymentValue_Leave);
+            this.txtPaymentValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtPaymentValue_Validating);
             // 
             // txtRecipientSortCode
             // 
@@ -130,7 +136,10 @@
             this.txtRecipientSortCode.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtRecipientSortCode, "Enter the Employees Bank Sort Code");
             this.txtRecipientSortCode.TextChanged += new System.EventHandler(this.TxtRecipientSortCode_TextChanged);
+            this.txtRecipientSortCode.Enter += new System.EventHandler(this.txtRecipientSortCode_Enter);
             this.txtRecipientSortCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecipientSortCode_KeyPress);
+            this.txtRecipientSortCode.Leave += new System.EventHandler(this.txtRecipientSortCode_Leave);
+            this.txtRecipientSortCode.Validating += new System.ComponentModel.CancelEventHandler(this.txtRecipientSortCode_Validating);
             // 
             // txtOriginatorSortCode
             // 
@@ -143,7 +152,10 @@
             this.txtOriginatorSortCode.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtOriginatorSortCode, "Enter the Employers Bank Sort Code");
             this.txtOriginatorSortCode.TextChanged += new System.EventHandler(this.TxtOriginatorSortCode_TextChanged);
+            this.txtOriginatorSortCode.Enter += new System.EventHandler(this.txtOriginatorSortCode_Enter);
             this.txtOriginatorSortCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOriginatorSortCode_KeyPress);
+            this.txtOriginatorSortCode.Leave += new System.EventHandler(this.txtOriginatorSortCode_Leave);
+            this.txtOriginatorSortCode.Validating += new System.ComponentModel.CancelEventHandler(this.txtOriginatorSortCode_Validating);
             // 
             // txtRandomString
             // 
@@ -156,6 +168,9 @@
             this.txtRandomString.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtRandomString, "Copy & Paste the BACS hash code from your payroll product");
             this.txtRandomString.TextChanged += new System.EventHandler(this.txtRandomString_TextChanged);
+            this.txtRandomString.Enter += new System.EventHandler(this.txtRandomString_Enter);
+            this.txtRandomString.Leave += new System.EventHandler(this.txtRandomString_Leave);
+            this.txtRandomString.Validating += new System.ComponentModel.CancelEventHandler(this.txtRandomString_Validating);
             // 
             // PaymentValue
             // 
@@ -246,6 +261,8 @@
             this.txtGeneratedHash.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtGeneratedHash, "Copy & Paste the \'BACS Hash Code\' to Compare or click Generate");
             this.txtGeneratedHash.TextChanged += new System.EventHandler(this.GeneratedHash_TextChanged);
+            this.txtGeneratedHash.Enter += new System.EventHandler(this.txtGeneratedHash_Enter);
+            this.txtGeneratedHash.Leave += new System.EventHandler(this.txtGeneratedHash_Leave);
             // 
             // Hash_Code
             // 

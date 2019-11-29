@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace HashCode
 {
@@ -94,7 +96,7 @@ namespace HashCode
             //Build a collection of all the fields you want to validate
             var fields = new (TextBox, string, int)[]
             {
-                (txtRandomString, "BACS Random String", 0),
+                (txtRandomString, "BACS Random String", 64),
                 (txtOriginatorSortCode, "Originator Sort Code", 6),
                 (txtRecipientSortCode, "Recipient Sort Code", 6),
                 (txtPaymentValue, "Payment Value", 0),
@@ -413,6 +415,136 @@ namespace HashCode
             txtPaymentValue.Text = string.Empty;
             txtRandomNumber.Text = string.Empty;
             txtGeneratedHash.Text = string.Empty;
+        }
+        private void txtRandomString_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtRandomString.Text))
+            {
+                txtRandomString.ForeColor = Color.Red;
+                txtRandomString.BackColor = Color.Yellow;
+            }
+        }
+        private void txtRandomString_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtRandomString.ForeColor = Color.Black;
+            txtRandomString.BackColor = Color.White;
+        }
+        private void txtRandomString_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtRandomString.Text))
+            {
+                MessageBox.Show("Please enter the BACS Random String", "BACS Random String", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtRandomString.Focus();
+            }
+        }
+        private void txtOriginatorSortCode_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtOriginatorSortCode.Text))
+            {
+                txtOriginatorSortCode.ForeColor = Color.Red;
+                txtOriginatorSortCode.BackColor = Color.Yellow;
+            }
+        }
+        private void txtOriginatorSortCode_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtOriginatorSortCode.ForeColor = Color.Black;
+            txtOriginatorSortCode.BackColor = Color.White;
+        }
+        private void txtOriginatorSortCode_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtOriginatorSortCode.Text))
+            {
+                MessageBox.Show("Please enter the employers sort code", "Originator Sort Code", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtOriginatorSortCode.Focus();
+            }
+        }
+        private void txtRecipientSortCode_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtRecipientSortCode.Text))
+            {
+                txtRecipientSortCode.ForeColor = Color.Red;
+                txtRecipientSortCode.BackColor = Color.Yellow;
+            }
+        }
+        private void txtRecipientSortCode_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtRecipientSortCode.ForeColor = Color.Black;
+            txtRecipientSortCode.BackColor = Color.White;
+        }
+        private void txtRecipientSortCode_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtRecipientSortCode.Text))
+            {
+                MessageBox.Show("Please enter the employees sort code", "Recipient Sort Code", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtRecipientSortCode.Focus();
+            }
+        }
+        private void txtPaymentValue_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtPaymentValue.Text))
+            {
+                txtPaymentValue.ForeColor = Color.Red;
+                txtPaymentValue.BackColor = Color.Yellow;
+            }
+        }
+        private void txtPaymentValue_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtPaymentValue.ForeColor = Color.Black;
+            txtPaymentValue.BackColor = Color.White;
+        }
+        private void txtPaymentValue_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtPaymentValue.Text))
+            {
+                MessageBox.Show("Please enter the employees NET pay", "Payment Value", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtPaymentValue.Focus();
+            }
+        }
+        private void txtRandomNumber_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtRandomNumber.Text))
+            {
+                txtRandomNumber.ForeColor = Color.Red;
+                txtRandomNumber.BackColor = Color.Yellow;
+            }
+        }
+        private void txtRandomNumber_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtRandomNumber.ForeColor = Color.Black;
+            txtRandomNumber.BackColor = Color.White;
+        }
+        private void txtRandomNumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.txtRandomNumber.Text))
+            {
+                MessageBox.Show("Please enter the Hash Code Random Number", "Hash Code", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtRandomNumber.Focus();
+            }
+        }
+        private void txtGeneratedHash_Enter(object sender, EventArgs e)
+        {
+            //If the TextBox contains no text, change its foreground and background colours.
+            if (string.IsNullOrEmpty(txtGeneratedHash.Text))
+            {
+                txtGeneratedHash.ForeColor = Color.Red;
+                txtGeneratedHash.BackColor = Color.Yellow;
+            }
+        }
+        private void txtGeneratedHash_Leave(object sender, EventArgs e)
+        {
+            //Reset the colours after focus is lost.
+            txtGeneratedHash.ForeColor = Color.Black;
+            txtGeneratedHash.BackColor = Color.White;
         }
     }
 }
